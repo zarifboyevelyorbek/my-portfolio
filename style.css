@@ -1,0 +1,278 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ROOT COLORS */
+:root {
+  --bg-color: #f7f7f7;
+  --text-color: #222;
+  --primary: #4f46e5;
+  --secondary: #6366f1;
+  --card-bg: #fff;
+}
+
+/* DARK MODE COLORS */
+.dark {
+  --bg-color: #0e0e0e;
+  --text-color: #eaeaea;
+  --card-bg: #1a1a1a;
+}
+
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HEADER */
+header {
+  background: var(--card-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Mobile menu button */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Dark mode toggle */
+#dark-toggle {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: 0.3s;
+}
+
+/* HERO */
+.hero {
+  padding: 90px 0;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.hero-text .btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.hero-text .btn:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.hero-img img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+/* ABOUT */
+.about {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 15px auto 0 auto;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* SKILLS */
+.skills {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.skill-boxes {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.skill {
+  background: var(--card-bg);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--primary);
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* PROJECTS */
+.projects {
+  padding: 60px 0;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  border: 1px solid #eee;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 60px 0;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/* SCROLL ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .hero-img img {
+    width: 250px;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
